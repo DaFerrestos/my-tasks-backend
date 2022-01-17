@@ -24,7 +24,7 @@ public class UserReq {
         this.name = name;
     }
 
-    public String getEmail() {
+    public static String getEmail() {
         return email;
     }
 
