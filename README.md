@@ -7,3 +7,5 @@ criada pela *Heroku*.
 ### No projeto atual já é possível observar:
 * Estrutura de diretórios utilizando o padrão Gradle do framework ***Spring Boot***.
 * Validação de dados utilizando a biblioteca ***Bean Validation with Hibernate validator***.
+* Comunicação com banco de dados utilizando Spring JPA
+
