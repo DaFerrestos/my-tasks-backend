@@ -1,6 +1,5 @@
 package com.example.mytasksbackend.exception;
 
-import org.apache.catalina.filters.ExpiresFilter;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.MethodArgumentNotValidException;
@@ -14,12 +13,11 @@ import java.util.stream.Collectors;
 public class GlobalExceptionHandler {
 
     @ExceptionHandler(MethodArgumentNotValidException.class)
-    public ResponseEntity<List<Violation>> handlerBadRequest(MethodArgumentNotValidException ex) {
+    public ResponseEntity<List<Violation>> handleBadRequest(MethodArgumentNotValidException ex) {
         List<Violation> violations = ex.getFieldErrors().stream()
                 .map(f -> new Violation(f.getField(), f.getDefaultMessage()))
                 .collect(Collectors.toList());
         return new ResponseEntity(violations, HttpStatus.BAD_REQUEST);
-
     }
 
 }

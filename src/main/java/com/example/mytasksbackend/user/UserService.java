@@ -27,11 +27,11 @@ public class UserService implements UserServiceI{
             throw new ResponseStatusException(HttpStatus.CONFLICT, "Não é possível cadastrar mais usuários");
         }
 
-        if (userRepository.existsByEmail(UserReq.getEmail())) {
-            throw new ResponseStatusException(HttpStatus.CONFLICT, "Usuário já cadastrado com esse e-mail");
+        if(userRepository.existsByEmail(userReq.getEmail())) {
+            throw new ResponseStatusException(HttpStatus.CONFLICT, "usuário já cadastrado com esse e-mail");
         }
 
-        return UserRepository.save(new User(userReq.getName(), userReq.getEmail(), userReq.getPassword()));
+        return userRepository.save(new User(userReq.getName(), userReq.getEmail(), userReq.getPassword()));
     }
 
 }
