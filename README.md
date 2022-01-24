@@ -8,4 +8,6 @@ criada pela *Heroku*.
 * Estrutura de diretórios utilizando o padrão Gradle do framework ***Spring Boot***.
 * Validação de dados utilizando a biblioteca ***Bean Validation with Hibernate validator***.
 * Comunicação com banco de dados utilizando Spring JPA
+* Implementação de busca de usuário por ID
+* Deploy Heroku : https://my-tasks-backend-daferrestos.herokuapp.com/
 
