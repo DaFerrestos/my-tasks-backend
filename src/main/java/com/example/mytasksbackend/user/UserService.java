@@ -5,6 +5,10 @@ import org.springframework.stereotype.Service;
 import org.springframework.web.server.ResponseStatusException;
 
 import java.util.List;
+import java.util.Optional;
+import java.util.UUID;
+
+import static com.fasterxml.jackson.databind.jsonFormatVisitors.JsonValueFormat.UUID;
 
 @Service
 public class UserService implements UserServiceI{
@@ -19,6 +23,11 @@ public class UserService implements UserServiceI{
     @Override
     public List<User> findAll() {
         return userRepository.findAll();
+    }
+
+    @Override
+    public Optional<User> findById(UUID id) {
+        return userRepository.findById(id);
     }
 
     @Override
