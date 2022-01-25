@@ -10,4 +10,6 @@ criada pela *Heroku*.
 * Comunicação com banco de dados utilizando Spring JPA
 * Implementação de busca de usuário por ID
 * Deploy Heroku : https://my-tasks-backend-daferrestos.herokuapp.com/
+* Testes unitários 
+* Github Actions com Serviço configurado para deploy automático no Heroku
 
