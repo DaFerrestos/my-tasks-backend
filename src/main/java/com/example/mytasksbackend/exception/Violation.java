@@ -4,11 +4,10 @@ public class Violation {
     private String field;
     private String message;
 
-    public Violation(){
-
+    public Violation() {
     }
 
-    public Violation(String field, String message){
+    public Violation(String field, String message) {
         this.field = field;
         this.message = message;
     }
@@ -27,5 +26,13 @@ public class Violation {
 
     public void setMessage(String message) {
         this.message = message;
+    }
+
+    @Override
+    public String toString() {
+        return "Violation{" +
+                "field='" + field + '\'' +
+                ", message='" + message + '\'' +
+                '}';
     }
 }
