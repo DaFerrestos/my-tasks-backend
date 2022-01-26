@@ -2,6 +2,7 @@ plugins {
 	id 'org.springframework.boot' version '2.6.2'
 	id 'io.spring.dependency-management' version '1.0.11.RELEASE'
 	id 'java'
+	id "org.flywaydb.flyway" version "8.4.2"
 }
 
 group = 'com.example'
@@ -17,8 +18,7 @@ dependencies {
 	implementation 'org.springframework.boot:spring-boot-starter-validation'
 	implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
 	implementation 'org.flywaydb:flyway-core'
-    implementation 'org.jetbrains:annotations:20.1.0'
-    runtimeOnly 'org.postgresql:postgresql'
+	runtimeOnly 'org.postgresql:postgresql'
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
 }
 
@@ -28,4 +28,11 @@ test {
 
 tasks.jar {
 	enabled = false
+}
+
+flyway {
+	url = System.getenv().getOrDefault("DATASOURCE_URL", "jdbc:postgresql://localhost:5432/my_tasks")
+	user = System.getenv("DATASOURCE_USERNAME") ?: "postgres"
+	password = System.getenv("DATASOURCE_PASSWORD") ?: "123456"
+	cleanDisabled = System.getenv("FLYWAY_CLEAN_DISABLED") ?: false
 }

@@ -18,29 +18,29 @@ public class UserRepositoryTest {
 
     @Test
     public void userNotExistsByEmail() {
-        User user1 = new User("Maria", "maria@email.com", "123");
-        User user2 = new User("Joao", "joao@email.com", "123");
+        User user1 = new User("John", "john@email.com", "123");
+        User user2 = new User("Mary", "mary@email.com", "123");
 
         entityManager.persist(user1);
         entityManager.persist(user2);
 
-        boolean userExists = userRepository.existsByEmail("pedro@email.com");
+        boolean userExists = userRepository.existsByEmail("paul@email.com");
 
         assertFalse(userExists);
     }
 
     @Test
     public void userExistsByEmail() {
-        User user1 = new User("Maria", "maria@email.com", "123");
-        User user2 = new User("Joao", "joao@email.com", "123");
+        User user1 = new User("John", "john@email.com", "123");
+        User user2 = new User("Mary", "mary@email.com", "123");
         entityManager.persist(user1);
         entityManager.persist(user2);
 
-        boolean mariaExists = userRepository.existsByEmail("maria@email.com");
-        boolean joaoExists = userRepository.existsByEmail("joao@email.com");
+        boolean johnExists = userRepository.existsByEmail("john@email.com");
+        boolean maryExists = userRepository.existsByEmail("mary@email.com");
 
-        assertTrue(mariaExists);
-        assertTrue(joaoExists);
+        assertTrue(johnExists);
+        assertTrue(maryExists);
     }
 
 
