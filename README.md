@@ -12,4 +12,6 @@ criada pela *Heroku*.
 * Deploy Heroku : https://my-tasks-backend-daferrestos.herokuapp.com/
 * Testes unitários 
 * Github Actions com Serviço configurado para deploy automático no Heroku
+* Configuração de logs e informações preservadas em variáveis de ambiente
+
 
